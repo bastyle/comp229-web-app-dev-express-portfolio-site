@@ -8,12 +8,14 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(exp.static('public'))
 
+const viewsPathPrefix = "./public/views";
+
 app.get("/", function (req, res) {
-    res.sendFile(path.join(__dirname, "./public/views/home.html"));
+    res.sendFile(path.join(__dirname, viewsPathPrefix + "/home.html"));
 });
 
 app.use("/about_me", function (req, res) {//doesn care the http method that are using
-    res.sendFile(path.join(__dirname, "about_me.html"));
+    res.sendFile(path.join(__dirname, viewsPathPrefix + "/about_me.html"));
 });
 
 app.route("/login")
@@ -29,8 +31,8 @@ app.route("/login")
 
 //
 app.get("/product/:id", function (req, res) {
-    var product_id={"id" : Number(req.params.id), name : "product one"};
-    console.log("product: "+JSON.stringify(product_id));
+    var product_id = { "id": Number(req.params.id), name: "product one" };
+    console.log("product: " + JSON.stringify(product_id));
     //res.send("product_id: "+product_id);
     res.json(product_id)
 })
