@@ -14,11 +14,25 @@ app.get("/", function (req, res) {
     res.sendFile(path.join(__dirname, viewsPathPrefix + "/home.html"));
 });
 
-app.use("/about_me", function (req, res) {//doesn care the http method that are using
+app.use("/about_me", function (req, res) {
     res.sendFile(path.join(__dirname, viewsPathPrefix + "/about_me.html"));
 });
 
-app.route("/login")
+app.use("/projects", function (req, res) {
+    res.sendFile(path.join(__dirname, viewsPathPrefix + "/projects.html"));
+});
+
+app.use("/services", function (req, res) {
+    res.sendFile(path.join(__dirname, viewsPathPrefix , "/services.html"));
+});
+
+app.use("/contact_me", function (req, res) {
+    res.sendFile(path.join(__dirname, viewsPathPrefix + "/contact.html"));
+});
+
+
+
+/*app.route("/login")
     .get(function (req, res) {
         res.sendFile(path.join(__dirname, "login.html"));
     })
@@ -29,13 +43,12 @@ app.route("/login")
         res.sendFile(path.join(__dirname, "loged.html"));
     });
 
-//
 app.get("/product/:id", function (req, res) {
     var product_id = { "id": Number(req.params.id), name: "product one" };
     console.log("product: " + JSON.stringify(product_id));
     //res.send("product_id: "+product_id);
     res.json(product_id)
-})
+})*/
 
 var port = process.env.PORT || 3000; //default setting or value for port var
 console.log("port: " + process.env.PORT)
