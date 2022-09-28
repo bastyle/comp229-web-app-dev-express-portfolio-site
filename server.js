@@ -1,7 +1,7 @@
 const exp = require('express');
 //const app = exp();
 //const path = require("path")
-const bodyParser = require('body-parser');
+//const bodyParser = require('body-parser');
 var app = require('./app');
 
 //app.use(bodyParser.urlencoded({ extended: true }));

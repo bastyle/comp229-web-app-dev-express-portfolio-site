@@ -1,52 +1,53 @@
 <%- include('./partials/header'); %>
-<%- include('./partials/navbar'); %>
+    <%- include('./partials/navbar'); %>
 
-    <div class="container">
-        <div class="p-5 mb-6 bg-light rounded-5">
-            <div>
-                <h3>Please do not hesitate to contact us directly. </h3>
-                <h3>I will call back to you within a matter of hours to help you.</h3>
+
+        <div class="container">
+            <div class="p-5 mb-6 bg-light rounded-5">
+                <div>
+                    <h3>Please do not hesitate to contact us directly. </h3>
+                    <h3>I will call back to you within a matter of hours to help you.</h3>
+                </div>
+                <br />
+                <form method="POST" enctype="application/x-www-form-urlencoded" action="/" id="myForm">
+                    <div class="row mb-3">
+                        <div class="col">
+                            <label for="firstName" class="form-label">First Name</label>
+                            <input type="text" class="form-control" placeholder="Jhon" name="firstName"
+                                id="firstName">
+                        </div>
+                        <div class="col">
+                            <label for="lastName" class="form-label">Last Name</label>
+                            <input type="text" class="form-control" placeholder="Smith" name="lastName"
+                                id="lastName">
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <div class="col">
+                            <label for="contact-number" class="form-label">Contact Number</label>
+                            <input type="text" class="form-control" placeholder="+1 123 456 7890" name="contact-number"
+                                id="contact-number">
+                        </div>
+                        <div class="col">
+                            <label for="contact-email" class="form-label">Email</label>
+                            <input type="text" class="form-control" placeholder="your.email@centennial.ca"
+                                name="contact-email" id="contact-email">
+                        </div>
+                    </div>
+
+                    <div class=" row mb-2">
+                        <label for="contact-msg" class="form-label">Message</label>
+                        <textarea class="form-control" id="contact-msg" rows="3" name="contact-msg"
+                            id="contact-msg"></textarea>
+                    </div>
+
+                    <div class="row mb-2 ">
+                        <button type="submit" class="btn btn-primary mb-3">Submit</button>
+                    </div>
+                </form>
             </div>
-            <br/>
-            <form method="POST" enctype="application/x-www-form-urlencoded" action="/">
-                <div class="row mb-3">
-                    <div class="col">
-                        <label for="contact-first" class="form-label">First Name</label>
-                        <input type="text" class="form-control" placeholder="Jhon" name="contact-first"
-                            id="contact-first">
-                    </div>
-                    <div class="col">
-                        <label for="contact-first" class="form-label">Last Name</label>
-                        <input type="text" class="form-control" placeholder="Smith" name="contact-last"
-                            id="contact-last">
-                    </div>
-                </div>
-
-                <div class="row mb-3">
-                    <div class="col">
-                        <label for="contact-number" class="form-label">Contact Number</label>
-                        <input type="text" class="form-control" placeholder="+1 123 456 7890" name="contact-number"
-                            id="contact-number">
-                    </div>
-                    <div class="col">
-                        <label for="contact-email" class="form-label">Email</label>
-                        <input type="text" class="form-control" placeholder="your.email@centennial.ca"
-                            name="contact-email" id="contact-email">
-                    </div>
-                </div>
-
-                <div class=" row mb-2">
-                    <label for="contact-msg" class="form-label">Message</label>
-                    <textarea class="form-control" id="contact-msg" rows="3" name="contact-msg"
-                        id="contact-msg"></textarea>
-                </div>
-
-                <div class="row mb-2 ">
-                    <button type="submit" class="btn btn-primary mb-3">Submit</button>
-                  </div>
-            </form>
         </div>
-    </div>
 
 
-    <%- include('./partials/footer'); %> 
+        <%- include('./partials/footer'); %>

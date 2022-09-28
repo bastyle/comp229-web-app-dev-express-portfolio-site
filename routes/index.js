@@ -1,8 +1,9 @@
 var express = require('express');
 var router = express.Router();
 const path = require("path")
-/*app.use(bodyParser.urlencoded({ extended: true }));
-app.use(exp.static('public'))*/
+
+
+//app.use(exp.static('public'))
 
 var mime = require('mime');
 var fs = require('fs');
@@ -10,11 +11,10 @@ var fs = require('fs');
 const viewsPathPrefix = "../views";
 
 router.get("/", function (req, res) {
-    res.render('home', { title: 'Home' , menu: 'home'});
+    res.render('home', { title: 'Home' , menu: 'home', modal: false});
 });
 
 router.use("/about_me", function (req, res) {
-    console.log("about me __dirname: " + __dirname);
     res.render('about_me', { title: 'About Me', menu: 'about' });
 });
 
@@ -35,8 +35,15 @@ router.use("/services", function (req, res) {
     res.render('services', { title: 'Services', menu: 'services' });
 });
 
-router.use("/contact_me", function (req, res) {
+router.get("/contact_me", function (req, res) {
     res.render('contact', { title: 'Contact', menu: 'contact' });
+});
+
+router.post("/", function (req, res) {
+    console.log("req:  %j" , (req.body));
+    const contact = JSON.parse(JSON.stringify(req.body));
+    console.log("contact:  " , contact);
+    res.render('home', { title: 'Home' , menu: 'home', modal: true, contact: contact});
 });
 
 module.exports = router;

@@ -1,6 +1,6 @@
 <%- include('./partials/header'); %>
-<%- include('./partials/navbar'); %>
-    
+    <%- include('./partials/navbar'); %>
+
 
         <div class="container">
             <div class="p-5 mb-6 bg-light rounded-5">
@@ -13,4 +13,38 @@
                 You can know more about me is this <a href="/about_me" class="text-warning ">Link</a></p>
             </div>
 
-<%- include('./partials/footer'); %>    
+            <% if (modal){ %>
+                
+                
+
+            <!-- Modal -->            
+            <div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="contactModalLabel">Thanks <%= contact.firstName %>
+                                    <%= contact.lastName %>
+                            </h5>
+                            <button type="button" class="btn btn-close" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            I have received your message and would like to thank you for writing to me.
+                            I will reply by email as soon as possible.
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" >Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <% } %>
+            <%- include('./partials/footer'); %>
+                <script>
+                    $('#contactModal').modal();
+                    $(".btn").click(function () {
+                        //console.log("clixk")
+                        $("#contactModal").modal('hide');
+                        //$('.modal.in').modal('hide') 
+                    });
+                </script>
