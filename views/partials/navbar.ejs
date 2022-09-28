@@ -8,11 +8,11 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <div class="navbar-nav">
-                    <a href="/" class="nav-item nav-link active">Home</a>
-                    <a href="/about_me" class="nav-item nav-link">About Me</a>
-                    <a href="/projects" class="nav-item nav-link">Projects</a>
-                    <a href="/services" class="nav-item nav-link">Services</a>
-                    <a href="/contact_me" class="nav-item nav-link" tabindex="-1">Contact Me</a>
+                    <a href="/" class="nav-item nav-link <%= menu === 'home' ? 'active' : '' %>">Home</a>
+                    <a href="/about_me" class="nav-item nav-link <%= menu === 'about' ? 'active' : '' %>">About Me</a>
+                    <a href="/projects" class="nav-item nav-link <%= menu === 'projects' ? 'active' : '' %>">Projects</a>
+                    <a href="/services" class="nav-item nav-link <%= menu === 'services' ? 'active' : '' %>">Services</a>
+                    <a href="/contact_me" class="nav-item nav-link <%= menu === 'contact' ? 'active' : '' %>" tabindex="-1">Contact Me</a>
                 </div>
             </div>
         </div>
