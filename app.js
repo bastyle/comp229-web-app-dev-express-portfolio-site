@@ -1,3 +1,10 @@
+/**
+ * @file app.js
+ * @author Bastian Bastias Sanchez. 
+ * @studentID 301242983 
+ * @date September 30th 2022.
+ * @since  1.0.0
+ */
 // installed 3rd party packages
 const exp = require('express');
 const path = require('path');

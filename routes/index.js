@@ -1,3 +1,11 @@
+/**
+ * @file index.js
+ * @author Bastian Bastias Sanchez. 
+ * @studentID 301242983 
+ * @date September 30th 2022.
+ * @since  1.0.0
+ */
+
 var express = require('express');
 var router = express.Router();
 const path = require("path")
