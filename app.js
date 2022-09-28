@@ -18,7 +18,7 @@ app.use(exp.json());
 app.use(exp.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(exp.static(path.join(__dirname, 'public')));
-app.use(exp.static(path.join(__dirname, 'node_modules')));
+//app.use(exp.static(path.join(__dirname, 'node_modules')));
 
 app.use('/', indexRouter);
 //app.use('/users', usersRouter);

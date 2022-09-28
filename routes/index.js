@@ -12,6 +12,7 @@ router.get("/", function (req, res) {
 });
 
 router.use("/about_me", function (req, res) {
+    console.log("about me");
     res.sendFile(path.join(__dirname, viewsPathPrefix + "/about_me.html"));
 });
 
