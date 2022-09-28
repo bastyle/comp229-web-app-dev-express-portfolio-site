@@ -1,11 +1,9 @@
 <%- include('./partials/header'); %>
     <%- include('./partials/navbar'); %>
 
-
         <div class="container">
             <div class="p-5 mb-6 bg-light rounded-5">
                 <h1>Welcome to my Portfolio</h1>
-                <!--<p class="card-text bg-light" style="transform: rotate(0);">My name is Bastian Bastias</p>-->
                 <p class="card-text bg-light" style="transform: rotate(0);">The main idea of this portfolio is to make
                     my work ans services known mentioning my skills and experience. </p>
                     <p class="card-text bg-light" style="transform: rotate(0);">
@@ -15,11 +13,8 @@
                 You can know more about me is this <a href="/about_me" class="text-warning ">Link</a></p>
             </div>
 
+            <!-- Modal -->
             <% if (modal){ %>
-                
-                
-
-            <!-- Modal -->            
             <div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel"
                 aria-hidden="true">
                 <div class="modal-dialog">
@@ -45,8 +40,6 @@
                 <script>
                     $('#contactModal').modal();
                     $(".btn").click(function () {
-                        //console.log("clixk")
                         $("#contactModal").modal('hide');
-                        //$('.modal.in').modal('hide') 
                     });
                 </script>

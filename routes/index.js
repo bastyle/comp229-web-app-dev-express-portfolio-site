@@ -2,9 +2,6 @@ var express = require('express');
 var router = express.Router();
 const path = require("path")
 
-
-//app.use(exp.static('public'))
-
 var mime = require('mime');
 var fs = require('fs');
 
