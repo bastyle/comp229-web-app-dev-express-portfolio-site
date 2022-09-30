@@ -46,7 +46,9 @@
             <% } %>
             <%- include('./partials/footer'); %>
                 <script>
+                    // automatic modal activation when is a post request from contact form
                     $('#contactModal').modal();
+                    // event to deactive modal 
                     $(".btn").click(function () {
                         $("#contactModal").modal('hide');
                     });

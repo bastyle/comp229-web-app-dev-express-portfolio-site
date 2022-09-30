@@ -21,7 +21,7 @@ const app = exp();
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs'); // express  -e
-
+// general app settings
 app.use(exp.json());
 app.use(exp.urlencoded({ extended: false }));
 app.use(cookieParser());
