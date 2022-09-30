@@ -45,10 +45,11 @@ router.get("/contact_me", function (req, res) {
     res.render('contact', { title: 'Contact', menu: 'contact' });
 });
 
+// when is a post request from with contact form data.
 router.post("/", function (req, res) {
-    console.log("req:  %j" , (req.body));
+    //console.log("req:  %j" , (req.body));
     const contact = JSON.parse(JSON.stringify(req.body));
-    console.log("contact:  " , contact);
+    //console.log("contact:  " , contact);
     res.render('home', { title: 'Home' , menu: 'home', modal: true, contact: contact});
 });
 
