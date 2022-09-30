@@ -15,6 +15,7 @@ var fs = require('fs');
 
 const viewsPathPrefix = "../views";
 
+// definition of routes
 router.get("/", function (req, res) {
     res.render('home', { title: 'Home' , menu: 'home', modal: false});
 });
