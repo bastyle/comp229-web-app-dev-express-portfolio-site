@@ -7,6 +7,10 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
   },
+  "engines": {
+    "node": "^16.00.0",
+    "npm" :"^8.0.0"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/bastyle/comp229-web-app-dev-express-portfolio-site.git"
