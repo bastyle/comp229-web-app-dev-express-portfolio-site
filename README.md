@@ -12,3 +12,6 @@
 - expressJS
 - EJS
 - HTML
+
+## **Heroku URL**
+_https://comp229-assigment1-bastian-bas.herokuapp.com/_
