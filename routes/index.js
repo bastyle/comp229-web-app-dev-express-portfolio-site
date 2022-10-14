@@ -15,6 +15,8 @@ var fs = require('fs');
 
 const viewsPathPrefix = "../views";
 
+let loginController = require('../controllers/login');
+
 // definition of routes
 router.get("/", function (req, res) {
     res.render('home', { title: 'Home', menu: 'home', modal: false, basePath: '../' });
@@ -52,5 +54,12 @@ router.post("/", function (req, res) {
     //console.log("contact:  " , contact);
     res.render('home', { title: 'Home', menu: 'home', modal: true, contact: contact, basePath: '../' });
 });
+
+
+/* GET Route for displaying the Login page */
+router.get('/login', loginController.displayLoginPage);
+
+/* POST Route for processing the Login page */
+router.post('/login', loginController.processLoginPage);
 
 module.exports = router;
