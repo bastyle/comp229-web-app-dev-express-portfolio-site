@@ -26,7 +26,7 @@ module.exports.displayContactList = (req, res, next) => {
                     displayName: 'Bastian'
                 });
         }
-    }).sort({ name: 1 }).collation({locale:"en", caseLevel:false});
+    }).sort({ name: 1 }).collation({ locale: "en", caseLevel: false });
 }
 
 module.exports.displayAddPage = (req, res, next) => {
@@ -90,6 +90,20 @@ module.exports.processEditPage = (req, res, next) => {
     });
 
     Contact.updateOne({ _id: id }, updatedContact, (err) => {
+        if (err) {
+            console.log(err);
+            res.end(err);
+        }
+        else {
+            res.redirect('/contacts');
+        }
+    });
+}
+
+module.exports.performDelete = (req, res, next) => {
+    let id = req.params.id;
+
+    Contact.remove({ _id: id }, (err) => {
         if (err) {
             console.log(err);
             res.end(err);

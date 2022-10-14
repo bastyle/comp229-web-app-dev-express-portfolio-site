@@ -33,6 +33,6 @@ router.get('/edit/:id', requireAuth, contactController.displayEditPage);
 router.post('/edit/:id', requireAuth, contactController.processEditPage);
 
 /* GET to perform  Deletion - DELETE Operation */
-//router.get('/delete/:id', requireAuth, contactController.performDelete);
+router.use('/delete/:id', requireAuth, contactController.performDelete);
 
 module.exports = router;
