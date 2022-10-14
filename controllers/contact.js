@@ -20,18 +20,20 @@ module.exports.displayContactList = (req, res, next) => {
                 {
                     title: 'Contacts',
                     menu: 'contacts',
+                    basePath: '../../',
                     ContactList: contactList,
                     /*displayName: req.user ? req.user.displayName : ''*/
                     displayName: 'Bastian'
                 });
         }
-    }).sort({name:1});
+    }).sort({ name: 1 });
 }
 
 module.exports.displayAddPage = (req, res, next) => {
     res.render('./contacts/add', {
         title: 'Add Contact',
         menu: 'contacts',
+        basePath: '../../',
         /*displayName: req.user ? req.user.displayName : ''*/
         displayName: 'Bastian'
     })
@@ -54,5 +56,25 @@ module.exports.processAddPage = (req, res, next) => {
             res.redirect('/contacts');
         }
     });
+}
 
+module.exports.displayEditPage = (req, res, next) => {
+    let id = req.params.id;
+
+    Contact.findById(id, (err, contactToEdit) => {
+        if (err) {
+            console.log(err);
+            res.end(err);
+        }
+        else {
+            //show the edit view
+            res.render('contacts/edit', {
+                title: 'Edit Contact', 
+                menu: 'contacts',
+                basePath: '../../',
+                contact: contactToEdit,
+                displayName: 'Bastian'
+            })
+        }
+    });
 }
