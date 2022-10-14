@@ -15,6 +15,18 @@ const { json } = require('express');
 
 
 const indexRouter = require('./routes/index');
+const contactRouter = require('./routes/contacts');
+
+//db settings
+let mongoose = require('mongoose');
+let DB = require('./config/db');
+mongoose.connect(DB.URI, {useNewUrlParser: true, useUnifiedTopology: true});
+let mongoDB = mongoose.connection;
+mongoDB.on('error', console.error.bind(console, 'Connection Error:'));
+mongoDB.once('open', ()=>{
+  console.log('Connected to MongoDB...');
+});
+
 
 const app = exp();
 
@@ -29,4 +41,5 @@ app.use(exp.static(path.join(__dirname, 'public')));
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use('/', indexRouter);
+app.use('/contacts', contactRouter);
 module.exports = app;
