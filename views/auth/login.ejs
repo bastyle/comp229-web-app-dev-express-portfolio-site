@@ -1,6 +1,17 @@
-<%- include ../partials/header.ejs %>
+<!--/*
+ * @file add.ejs
+ * @author Bastian Bastias Sanchez. 
+ * @studentID 301242983 
+ * @date October 14th 2022.
+ * @since  1.1.0
+ **/-->
 
-<%- include ../partials/navbar.ejs %>
+ <%- include('../partials/header'); %>
+ <%- include('../partials/navbar'); %>
+
+ <br />
+<br />
+<br />
 
 <main class="container">
     <!-- Message Area -->
@@ -25,11 +36,9 @@
                     <label for="password">Password: </label>
                     <input type="password" class="form-control"
                     name="password" placeholder="Enter password"
-                    id="password" required>
-                    or
-                    <a href="/register">Register Here</a>
+                    id="password" required>                    
                 </fieldset>
-
+                <br/>
                 <fieldset class="form-group text-right">
                     <input type="submit" class="btn btn-success" value="Login">
                     <a href="/">
@@ -43,4 +52,4 @@
 
 </main>
 
-<%- include ../partials/footer.ejs %>
+<%- include('../partials/footer'); %>

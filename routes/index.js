@@ -62,4 +62,10 @@ router.get('/login', loginController.displayLoginPage);
 /* POST Route for processing the Login page */
 router.post('/login', loginController.processLoginPage);
 
+router.use('/register', loginController.processRegisterPage);
+
+
+/* GET to perform UserLogout */
+router.get('/logout', loginController.performLogout);
+
 module.exports = router;

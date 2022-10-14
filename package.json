@@ -22,16 +22,32 @@
   },
   "homepage": "https://github.com/bastyle/comp229-web-app-dev-express-portfolio-site#readme",
   "dependencies": {
+    "@types/connect-flash": "^0.0.37",
+    "@types/jsonwebtoken": "^8.5.9",
+    "@types/passport-jwt": "^3.0.7",
+    "connect-flash": "^0.1.1",
     "cookie-parser": "^1.4.6",
     "ejs": "^3.1.8",
     "express": "^4.18.1",
+    "express-session": "^1.17.3",
+    "flash": "^1.1.0",
     "jsonwebtoken": "^8.5.1",
-    "mongoose": "^6.6.5"
+    "mongoose": "^6.6.5",
+    "passport": "^0.6.0",
+    "passport-jwt": "^4.0.0",
+    "passport-local": "^1.0.0",
+    "passport-local-mongoose": "^7.1.2"
   },
   "keywords": [
     "nodeJS",
     "express",
     "comp229",
     "bastian"
-  ]
+  ],
+  "devDependencies": {
+    "@types/express-session": "^1.17.5",
+    "@types/mongoose": "^5.11.97",
+    "@types/passport-local": "^1.0.34",
+    "@types/passport-local-mongoose": "^6.1.1"
+  }
 }

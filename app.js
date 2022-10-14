@@ -13,22 +13,63 @@ const bodyParser = require('body-parser');
 const { nextTick } = require('process');
 const { json } = require('express');
 
+//let cors = require('cors');
+// modules for authentication
+let session = require('express-session');
+let passport = require('passport');
 
+/*let passportJWT = require('passport-jwt');
+let JWTStrategy = passportJWT.Strategy;
+let ExtractJWT = passportJWT.ExtractJwt;*/
+
+let passportLocal = require('passport-local');
+let localStrategy = passportLocal.Strategy;
+let flash = require('connect-flash');
+
+// routers
 const indexRouter = require('./routes/index');
 const contactRouter = require('./routes/contacts');
+
 
 //db settings
 let mongoose = require('mongoose');
 let DB = require('./config/db');
-mongoose.connect(DB.URI, {useNewUrlParser: true, useUnifiedTopology: true});
+mongoose.connect(DB.URI, { useNewUrlParser: true, useUnifiedTopology: true });
 let mongoDB = mongoose.connection;
 mongoDB.on('error', console.error.bind(console, 'Connection Error:'));
-mongoDB.once('open', ()=>{
-  console.log('Connected to MongoDB...');
+mongoDB.once('open', () => {
+    console.log('Connected to MongoDB...');
 });
 
 
 const app = exp();
+
+//setup express session
+app.use(session({
+    secret: "SomeSecret",
+    saveUninitialized: false,
+    resave: false
+}));
+
+// initialize flash
+app.use(flash());
+
+// initialize passport
+app.use(passport.initialize());
+app.use(passport.session());
+
+// passport user configuration
+
+// create a User Model Instance
+let userModel = require('./models/user');
+let User = userModel.User;
+
+// implement a User Authentication Strategy
+passport.use(User.createStrategy());
+
+// serialize and deserialize the User info
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
