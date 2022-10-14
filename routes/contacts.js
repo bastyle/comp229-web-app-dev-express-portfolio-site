@@ -30,7 +30,7 @@ router.post('/add', requireAuth, contactController.processAddPage);
 router.get('/edit/:id', requireAuth, contactController.displayEditPage);
 
 /* POST Route for processing the Edit page - UPDATE Operation */
-//router.post('/edit/:id', requireAuth, contactController.processEditPage);
+router.post('/edit/:id', requireAuth, contactController.processEditPage);
 
 /* GET to perform  Deletion - DELETE Operation */
 //router.get('/delete/:id', requireAuth, contactController.performDelete);

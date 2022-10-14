@@ -26,7 +26,7 @@ module.exports.displayContactList = (req, res, next) => {
                     displayName: 'Bastian'
                 });
         }
-    }).sort({ name: 1 });
+    }).sort({ name: 1 }).collation({locale:"en", caseLevel:false});
 }
 
 module.exports.displayAddPage = (req, res, next) => {
@@ -69,12 +69,33 @@ module.exports.displayEditPage = (req, res, next) => {
         else {
             //show the edit view
             res.render('contacts/edit', {
-                title: 'Edit Contact', 
+                title: 'Edit Contact',
                 menu: 'contacts',
                 basePath: '../../',
                 contact: contactToEdit,
                 displayName: 'Bastian'
             })
+        }
+    });
+}
+
+module.exports.processEditPage = (req, res, next) => {
+    let id = req.params.id
+
+    let updatedContact = Contact({
+        "_id": id,
+        "name": req.body.name,
+        "contactNumber": req.body.contactNumber,
+        "emailAddress": req.body.emailAddress
+    });
+
+    Contact.updateOne({ _id: id }, updatedContact, (err) => {
+        if (err) {
+            console.log(err);
+            res.end(err);
+        }
+        else {
+            res.redirect('/contacts');
         }
     });
 }
