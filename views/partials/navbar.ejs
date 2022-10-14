@@ -16,14 +16,39 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
-                <div class="navbar-nav">
+                <!--<div class="navbar-nav">
                     <a href="/" class="nav-item nav-link <%= menu === 'home' ? 'active' : '' %>">Home</a>
                     <a href="/about_me" class="nav-item nav-link <%= menu === 'about' ? 'active' : '' %>">About Me</a>
                     <a href="/projects" class="nav-item nav-link <%= menu === 'projects' ? 'active' : '' %>">Projects</a>
                     <a href="/services" class="nav-item nav-link <%= menu === 'services' ? 'active' : '' %>">Services</a>
                     <a href="/contact_me" class="nav-item nav-link <%= menu === 'contact' ? 'active' : '' %>" tabindex="-1">Contact Me</a>
-                    <a href="/contacts" class="nav-item nav-link <%= menu === 'contacts' ? 'active' : '' %>" tabindex="-1">Contacts</a>
-                </div>
+                    <a href="/contacts" class="nav-item nav-link <%= menu === 'contacts' ? 'active' : '' %>" tabindex="-1">Contacts</a>                    
+                </div>-->
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a href="/" class="nav-item nav-link <%= menu === 'home' ? 'active' : '' %>">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/about_me" class="nav-item nav-link <%= menu === 'about' ? 'active' : '' %>">About Me</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/projects" class="nav-item nav-link <%= menu === 'projects' ? 'active' : '' %>">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/services" class="nav-item nav-link <%= menu === 'services' ? 'active' : '' %>">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/contact_me" class="nav-item nav-link <%= menu === 'contact' ? 'active' : '' %>" tabindex="-1">Contact Me</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/contacts" class="nav-item nav-link <%= menu === 'contacts' ? 'active' : '' %>" tabindex="-1">Contacts</a>
+                    </li>                    
+                </ul>
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a href="/login" class="nav-item nav-link <%= menu === 'login' ? 'active' : '' %>" tabindex="-1">Login</a>     
+                    </li>
+                </ul>
             </div>
         </div>
     </nav>

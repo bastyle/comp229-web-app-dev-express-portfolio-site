@@ -49,9 +49,7 @@ router.get("/contact_me", function (req, res) {
 
 // when is a post request from with contact form data.
 router.post("/", function (req, res) {
-    //console.log("req:  %j" , (req.body));
     const contact = JSON.parse(JSON.stringify(req.body));
-    //console.log("contact:  " , contact);
     res.render('home', { title: 'Home', menu: 'home', modal: true, contact: contact, basePath: '../' });
 });
 
@@ -62,7 +60,7 @@ router.get('/login', loginController.displayLoginPage);
 /* POST Route for processing the Login page */
 router.post('/login', loginController.processLoginPage);
 
-router.use('/register', loginController.processRegisterPage);
+//router.use('/register', loginController.processRegisterPage);
 
 
 /* GET to perform UserLogout */

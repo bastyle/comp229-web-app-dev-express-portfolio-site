@@ -1,3 +1,11 @@
+/**
+ * @file login.js
+ * @author Bastian Bastias Sanchez. 
+ * @studentID 301242983 
+ * @date October 14th 2022.
+ * @since  1.1.0
+ */
+
 let express = require('express');
 let router = express.Router();
 let mongoose = require('mongoose');
@@ -64,7 +72,6 @@ module.exports.processRegisterPage = (req, res, next) => {
         displayName: 'admin'
     });
 
-    //User.register(newUser, req.body.password, (err) => {
     User.register(newUser, 'admin', (err) => {
         if (err) {
             console.log("Error: Inserting New User");
