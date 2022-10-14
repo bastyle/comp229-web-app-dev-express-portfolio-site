@@ -21,7 +21,7 @@
             <h1><%= title %></h1>
 
             <% if(typeof displayName == 'string' && displayName) { %>
-                <a href="/contact-list/add" class="btn btn-primary" role="button">
+                <a href="/contacts/add" class="btn btn-primary" role="button">
                 <i class="fas fa-plus-circle"></i> Add a Contact</a>
             <% } %>
             <br>
@@ -46,11 +46,11 @@
                         <td class="text-center col-3"><%= ContactList[count].emailAddress %></td>
                         <% if(typeof displayName == 'string' && displayName) { %>
                             <td class="text-center col-1">
-                                <a href="/contact-list/edit/<%= ContactList[count]._id %>" class="btn btn-primary btn-sm">
+                                <a href="/contacts/edit/<%= ContactList[count]._id %>" class="btn btn-primary btn-sm">
                                 <i class="fas fa-pencil-alt"></i> Edit</a>
                             </td>
                             <td class="text-center col-1">
-                                <a href="/contact-list/delete/<%= ContactList[count]._id %>" class="btn btn-danger btn-sm">
+                                <a href="/contacts/delete/<%= ContactList[count]._id %>" class="btn btn-danger btn-sm">
                                 <i class="fas fa-trash-alt"></i> Delete</a>
                             </td>
                          <% } %>

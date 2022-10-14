@@ -4,10 +4,9 @@ let mongoose = require('mongoose');
 let contactModel = mongoose.Schema({
     name: String,
     contactNumber: String,
-    emailAddress: String    
+    emailAddress: String
 },
-{
-    collection: "contacts"
-});
-
+    {
+        collection: "contacts"
+    });
 module.exports = mongoose.model('Contact', contactModel);

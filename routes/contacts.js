@@ -9,11 +9,9 @@ let mongoose = require('mongoose');
 let contactController = require('../controllers/contact');
 
 // helper function for guard purposes
-function requireAuth(req, res, next)
-{
+function requireAuth(req, res, next) {
     // check if the user is logged in
-   /* if(!req.isAuthenticated())
-    {
+    /*if (!req.isAuthenticated()) {
         return res.redirect('/login');
     }*/
     next();
@@ -23,7 +21,7 @@ function requireAuth(req, res, next)
 router.get('/', contactController.displayContactList);
 
 /* GET Route for displaying the Add page - CREATE Operation */
-//router.get('/add', requireAuth, contactController.displayAddPage);
+router.get('/add', requireAuth, contactController.displayAddPage);
 
 /* POST Route for processing the Add page - CREATE Operation */
 //router.post('/add', requireAuth, contactController.processAddPage);

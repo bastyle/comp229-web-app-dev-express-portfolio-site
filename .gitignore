@@ -1,6 +1,24 @@
 # Created by https://www.toptal.com/developers/gitignore/api/visualstudiocode,node
 # Edit at https://www.toptal.com/developers/gitignore?templates=visualstudiocode,node
 
+## db
+config
+/config
+./config
+/config/
+/config/**
+**/config/
+**/config/**
+
+config/db.js
+/config/db.js
+./config/db.js
+config/db.js
+
+db.js
+*db.js
+
+
 ### Node ###
 # Logs
 logs
@@ -168,5 +186,3 @@ dist
 
 # End of https://www.toptal.com/developers/gitignore/api/visualstudiocode,node
 
-./config/db.js
-config/db.js
