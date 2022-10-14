@@ -8,14 +8,12 @@ let mongoose = require('mongoose');
 let Contact = require('../models/contact');
 
 module.exports.displayContactList = (req, res, next) => {
-    console.log("displayContactList");
     Contact.find((err, contactList) => {
-        console.log("find...");
         if (err) {
             return console.error(err);
         }
         else {
-            console.log(contactList);
+            //console.log(contactList);
             res.render('./contacts/list',
                 {
                     title: 'Contacts',
@@ -35,7 +33,8 @@ module.exports.displayAddPage = (req, res, next) => {
         menu: 'contacts',
         basePath: '../../',
         /*displayName: req.user ? req.user.displayName : ''*/
-        displayName: 'Bastian'
+        displayName: 'Bastian',
+        addView: true
     })
 }
 
@@ -73,7 +72,8 @@ module.exports.displayEditPage = (req, res, next) => {
                 menu: 'contacts',
                 basePath: '../../',
                 contact: contactToEdit,
-                displayName: 'Bastian'
+                displayName: 'Bastian',
+                addView: false
             })
         }
     });
@@ -103,7 +103,7 @@ module.exports.processEditPage = (req, res, next) => {
 module.exports.performDelete = (req, res, next) => {
     let id = req.params.id;
 
-    Contact.remove({ _id: id }, (err) => {
+    Contact.deleteOne({ _id: id }, (err) => {
         if (err) {
             console.log(err);
             res.end(err);
