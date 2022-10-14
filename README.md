@@ -17,4 +17,4 @@
 _https://comp229-assigment1-bastian-bas.herokuapp.com/_
 
 # TODO
-change mongoDB password (.gitignore)
+- env variable to connect to DB

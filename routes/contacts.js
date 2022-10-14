@@ -24,7 +24,7 @@ router.get('/', contactController.displayContactList);
 router.get('/add', requireAuth, contactController.displayAddPage);
 
 /* POST Route for processing the Add page - CREATE Operation */
-//router.post('/add', requireAuth, contactController.processAddPage);
+router.post('/add', requireAuth, contactController.processAddPage);
 
 /* GET Route for displaying the Edit page - UPDATE Operation */
 //router.get('/edit/:id', requireAuth, contactController.displayEditPage);

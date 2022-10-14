@@ -25,15 +25,34 @@ module.exports.displayContactList = (req, res, next) => {
                     displayName: 'Bastian'
                 });
         }
-    });
+    }).sort({name:1});
 }
 
 module.exports.displayAddPage = (req, res, next) => {
     res.render('./contacts/add', {
-        title: 'Add Book',
         title: 'Add Contact',
         menu: 'contacts',
         /*displayName: req.user ? req.user.displayName : ''*/
         displayName: 'Bastian'
     })
+}
+
+
+module.exports.processAddPage = (req, res, next) => {
+    let newContact = Contact({
+        "name": req.body.name,
+        "contactNumber": req.body.contactNumber,
+        "emailAddress": req.body.emailAddress
+    });
+
+    Contact.create(newContact, (err, Contact) => {
+        if (err) {
+            console.log(err);
+            res.end(err);
+        }
+        else {
+            res.redirect('/contacts');
+        }
+    });
+
 }
