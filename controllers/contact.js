@@ -1,3 +1,11 @@
+/**
+ * @file contact.js
+ * @author Bastian Bastias Sanchez. 
+ * @studentID 301242983 
+ * @date October 14th 2022.
+ * @since  1.1.0
+ */
+
 let express = require('express');
 let router = express.Router();
 let mongoose = require('mongoose');
