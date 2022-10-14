@@ -28,8 +28,7 @@ module.exports.displayContactList = (req, res, next) => {
                     menu: 'contacts',
                     basePath: '../../',
                     ContactList: contactList,
-                    /*displayName: req.user ? req.user.displayName : ''*/
-                    displayName: 'Bastian'
+                    displayName: req.user ? req.user.displayName : ''
                 });
         }
     }).sort({ name: 1 }).collation({ locale: "en", caseLevel: false });
@@ -40,8 +39,7 @@ module.exports.displayAddPage = (req, res, next) => {
         title: 'Add Contact',
         menu: 'contacts',
         basePath: '../../',
-        /*displayName: req.user ? req.user.displayName : ''*/
-        displayName: 'Bastian',
+        displayName: req.user ? req.user.displayName : '',
         addView: true
     })
 }
@@ -80,7 +78,7 @@ module.exports.displayEditPage = (req, res, next) => {
                 menu: 'contacts',
                 basePath: '../../',
                 contact: contactToEdit,
-                displayName: 'Bastian',
+                displayName: req.user ? req.user.displayName : '',
                 addView: false
             })
         }
