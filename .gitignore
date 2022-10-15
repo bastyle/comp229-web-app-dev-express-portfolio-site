@@ -3,22 +3,7 @@
 
 ## db
 .env
-config
-/config
-./config
-/config/
-/config/**
-**/config/
-**/config/**
-
-config/db.js
-/config/db.js
-./config/db.js
-config/db.js
-
-db.js
-*db.js
-
+#config
 
 ### Node ###
 # Logs
