@@ -8,7 +8,9 @@
 // initial definitions of variables
 const exp = require('express');
 var app = require('./app');
+
+require('dotenv').config();
+
 var port = process.env.PORT || 3000; //default setting or value for port var
-//console.log("port: "+port);
-console.log(process.env);
+console.log(process.env.URL_DB);
 app.listen(port);
