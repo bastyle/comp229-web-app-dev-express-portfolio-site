@@ -14,7 +14,9 @@
 - HTML
 
 ## **Heroku URL**
-_https://comp229-assigment1-bastian-bas.herokuapp.com/_
+- **assignment 1** _https://comp229-assigment1-bastian-bas.herokuapp.com/_
+- **assignment 2** _https://comp229-assigment2-bastian-bas.herokuapp.com/_
 
-# TODO
-- env variable to connect to DB
+## youtube
+- **assignment 1** _https://youtu.be/y7HemUgTLl4_
+- **assignment 2**  _https://youtu.be/DEQ0XcH95Fw_
